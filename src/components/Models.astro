@@ -1,0 +1,45 @@
+---
+import ModelCard from "./Cards/ModelCard.astro";
+const title = "Modelos"
+---
+
+<style>
+
+.models {
+    padding: 0px 128px 0px 128px;
+    margin-bottom: 20px;
+}
+
+</style>
+
+<h1 class="text-center font-bold text-5xl mt-32 mb-[-70px]">{title}</h1>
+<section class="models flex flex-row">
+
+    <ModelCard 
+        imgSrc="https://ekiona.com/contenido/media/2018/04/Moon-Ekiona-1.png"
+        nombreFarola="MOON"
+        descripcion="Compacta y estética, la unión perfecta entre eficiencia y diseño."
+    />
+    <ModelCard 
+        imgSrc="https://ekiona.com/contenido/media/2018/04/Ekiona-Buried.png"
+        nombreFarola="BURIED"
+        descripcion="Ligera y sencilla, preparada para aplicaciones especiales."
+    />
+    <ModelCard 
+        imgSrc="https://ekiona.com/contenido/media/2020/10/Serie-Crosswalk-V04.png"
+        nombreFarola="CROSSWALK"
+        descripcion="Diseñada para pasos peatonales."
+    />
+    <ModelCard 
+        imgSrc="https://ekiona.com/contenido/media/2020/10/Farola-Olintu-V02-1.png"
+        nombreFarola="OLINTU"
+        descripcion="Diseño minimalista, con batería de litio de última generación."
+    />
+    <ModelCard 
+        imgSrc="https://ekiona.com/contenido/media/2018/04/Ekiona-Skyline.png"
+        nombreFarola="SKYLINE"
+        descripcion="Diseñada para rotondas, vías urbanas y carreteras interurbanas."
+    />
+</section>
+
+<script is:inline></script>

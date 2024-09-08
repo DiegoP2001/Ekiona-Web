@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PrevHeader from "../components/PrevHeader.astro";
+import Header from "../components/Header.astro";
+import Carousel from "../components/Carousel.astro";
+import Models from "../components/Models.astro";
+import HeroCard from "../components/Cards/HeroCard.astro";
+import HeroSection from "../components/HeroSection.astro";
+import FeatureHighlights from "../components/FeatureHighlights.astro";
+import Goals from "../components/Goals.astro";
+import SolarBenefits from "../components/SolarBenefits.astro";
+import Curiosities from "../components/Curiosities.astro";
+import WhyUs from "../components/WhyUs.astro";
+import PreFooter from "../components/PreFooter.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Farolas Solares - Iluminación Solar - EKIONA - Soluciones de Iluminación"
+>
+  <PrevHeader />
+  <Header />
+  <div class="block h-[85dvh]">
+    <Carousel />
+  </div>
+  <Models />
+  <HeroSection/>
+  <FeatureHighlights/>
+  <Goals/>
+  <SolarBenefits/>
+  <Curiosities/>
+  <WhyUs/>
+  <PreFooter/>
+  <Footer/>
+
+</Layout>

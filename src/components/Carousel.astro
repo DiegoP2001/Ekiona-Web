@@ -1,0 +1,210 @@
+---
+
+---
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+  :root {
+    --circle-top-position: 55%;
+    --circle-left-position: 0;
+  }
+
+  .carousel {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle {
+    z-index: 10;
+    padding: 0.4rem;
+    position: absolute;
+    border-radius: 50%;
+    top: var(--circle-top-position);
+    left: var(--circle-left-position);
+    margin-left: 20px;
+    background-color: lightgray;
+
+    &&:hover {
+      cursor: pointer;
+      background-color: rgb(247, 244, 244);
+    }
+  }
+
+  .popup {
+    z-index: 10;
+    margin-left: 40px;
+    margin-right: 10px;
+    font-family: "Barlow Condensed", sans-serif;
+    padding-left: 20px;
+    width: 100px;
+    height: 30px;
+    text-align: justify;
+    transition: opacity 0.2s ease-in;
+  }
+
+  .popup::after {
+    position: absolute;
+    content: "";
+
+    width: 0;
+    height: 0px;
+
+    border: 15px solid transparent;
+    border-left: 0px;
+    border-right: 13px solid white;
+    left: -13px;
+
+    transform: translateY(0.5px);
+  }
+
+  .first:hover > .popup {
+    opacity: 1;
+    animation: move 0.2s ease-in;
+  }
+
+  .second:hover > .popup {
+    opacity: 1;
+    animation: move 0.2s ease-in;
+  }
+
+  .second {
+    top: calc(var(--circle-top-position) + 25px);
+  }
+
+  .title {
+    transition: opacity 0.7s ease-in;
+  }
+
+  .title-desc {
+    transition: opacity 0.7s ease-in;
+  }
+
+  .show-anim {
+    animation: moveY 0.7s ease-in;
+  }
+
+
+
+  @keyframes move {
+    from {
+      transform: translateX(10px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+
+  @keyframes moveY {
+    from {
+      transform: translateY(40px);
+    }
+
+    to {
+      transform: translateY(0px);
+    }
+    
+  }
+</style>
+
+<section class="carousel flex flex-1">
+  <button class="circle first" onclick="rotateImages(0)">
+    <p class="absolute popup top-[-5px] bg-white text-nowrap opacity-0">
+      El futuro
+    </p>
+  </button>
+  <button class="circle second" onclick="rotateImages(1)">
+    <p class="absolute popup top-[-5px] bg-white text-nowrap opacity-0">
+      Soluciones
+    </p>
+  </button>
+  <img
+    class="w-full h-full object-cover"
+    src="https://ekiona.com/contenido/media/2018/06/DSC05758.jpg"
+    alt="Imagen de la biblioteca"
+  />
+  <div class="img-title absolute top-[30%] left-[45%]">
+    <h2 class="title text-white text-5xl w-[65%] font-bold opacity-0 show-anim">
+      El futuro de las ciudades inteligentes
+    </h2>
+    <p class="title-desc text-white text-xl w-[50%] mt-5 leading-7 opacity-0 show-anim">
+      Opcionalmente incorporamos un sistema de telegestión capaz de ayudar a
+      controlar la instalación de farolas solares, ahorrando a nuestros clientes
+      costes de mantenimiento y servicio.
+    </p>
+  </div>
+  <img
+    class="w-full h-full object-cover hidden"
+    src="https://ekiona.com/contenido/media/2022/04/ekiona_img-scaled.jpg"
+    alt="Imagen de la biblioteca"
+  />
+  <div class="img-title absolute top-[30%] left-[45%]">
+    <h2 class="title text-white text-5xl w-[65%] font-bold opacity-0 show-anim">
+      Soluciones integrales de iluminación solar
+    </h2>
+    <p class="title-desc text-white text-xl w-[50%] mt-5 leading-7 opacity-0 show-anim">
+      Diseñamos, desarrollamos, fabricamos y comercializamos farolas solares que
+      se adaptan a cualquier necesidad
+    </p>
+  </div>
+</section>
+
+<script is:inline>
+  let currentImageIndex = 0;
+
+  function rotateImages(index = undefined) {
+    const images = document.querySelectorAll(".carousel img");
+    const h2 = document.querySelectorAll(".img-title > .title");
+    const text = document.querySelectorAll(".img-title > .title-desc");
+
+    if (index === undefined) {
+
+      images[currentImageIndex].classList.add("hidden");
+      
+      h2[currentImageIndex].classList.add("opacity-0");
+      h2[currentImageIndex].classList.remove("show-anim");
+
+      text[currentImageIndex].classList.add("opacity-0");
+      text[currentImageIndex].classList.remove("show-anim");
+      
+
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.remove("hidden");
+    } else {
+
+      images.forEach((image) => {
+        image.classList.add("hidden");
+      });
+
+      h2.forEach((item) => {
+        item.classList.add("opacity-0");
+        item.classList.remove("show-anim");
+      });
+
+      text.forEach((item) => {
+        item.classList.add("opacity-0");
+        item.classList.remove("show-anim");
+      });
+
+      h2[index].classList.remove("opacity-0");
+      h2[index].classList.add("show-anim");
+      void h2.offsetWidth
+
+      text[index].classList.remove("opacity-0");
+      text[index].classList.add("show-anim");
+      void text.offsetWidth
+
+      images[index].classList.remove("hidden");
+    }
+  }
+
+  setInterval(rotateImages, 7000);
+</script>

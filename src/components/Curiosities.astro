@@ -1,0 +1,144 @@
+---
+
+---
+
+<style>
+  .curiosity {
+    text-align: center;
+    width: 100%;
+    transform: translateX(-50%);
+  }
+
+  .swipe-elem {
+    animation: swipe 1s ease-in;
+  }
+
+  .did-you-know {
+    margin: 80px 128px 0px 128px;
+    padding: 20px 80px;
+    background-color: rgb(242, 196, 23);
+  }
+
+  .curiosities-container {
+    min-height: 150px;
+  }
+
+  @keyframes swipe {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<section class="did-you-know">
+  <h2 class="text-center text-3xl mb-10 mt-10 text-white font-medium">
+    ¿Sabías qué?
+  </h2>
+
+  <div class="curiosities-container relative">
+    <p class="curiosity absolute top-[10%] left-[50%] text-white text-xl">
+      La iluminación solar es capaz de cumplir los requisitos del reglamento de
+      eficiencia energética en instalaciones de alumbrado exterior RD 1890/2008.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      Una instalación de 30 farolas solares, a lo largo de 25 años, evitará
+      emitir a la atmósfera 32,98 Tn de CO2. Equivale a un bosque de 3.298
+      árboles.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      Los materiales con los que fabricamos nuestras farolas son de máxima
+      calidad.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      La iluminación LED es la más eficiente del mercado y la opción más
+      longeva.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      Zigbee es un conjunto de protocolos de alto nivel de comunicación
+      inalámbrica y bajo consumo basada en el estándar IEEE 802.15.4.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      Nuestra centralita electrónica es capaz de gobernar hasta 10 parámetros de
+      la farola, ofreciendo datos a tiempo real.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      Cada propuesta es particular y la tratamos como tal, haciendo un estudio
+      personalizado para cada caso.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      La edad media de nuestro equipo está en 32,8 años.
+    </p>
+    <p
+      class="curiosity opacity-0 absolute top-[10%] left-[50%] text-white text-xl"
+    >
+      Lo difícil lo hacemos y lo imposible lo intentamos.
+    </p>
+  </div>
+</section>
+
+<script>
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.7,
+  };
+
+  const section = document.querySelector(".did-you-know");
+  const curiosities = document.querySelectorAll(".curiosity");
+  let currentIndex = 1;
+  let intervalId = 0
+
+  let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        intervalId = swipe()
+      } else {
+        clearInterval(intervalId)
+      }
+    });
+  }, options);
+
+  observer.observe(section);
+
+  function swipe() {
+    
+    let id = 0
+
+    id = setInterval(() => {
+      curiosities.forEach((curiosity) => {
+        curiosity.classList.remove("swipe-elem");
+        curiosity.classList.add("opacity-0");
+      });
+
+      curiosities[currentIndex].classList.remove("opacity-0");
+      curiosities[currentIndex].classList.add("swipe-elem");
+      currentIndex++;
+
+      if (currentIndex >= curiosities.length) {
+        currentIndex = 0;
+      }
+    }, 10000);
+
+    return id
+  }
+</script>

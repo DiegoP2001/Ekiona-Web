@@ -1,0 +1,81 @@
+---
+ // Need to add a few things more
+---
+
+<header 
+    class="flex justify-between p-3 px-6 py-3 items-center bg-white"
+>
+    
+    <img class="w-36" src="https://ekiona.com/contenido/media/2018/03/logo-ekiona.png" alt="Logo EKIONA">
+    
+    <ul class="flex gap-10 text-slate-header">
+        <li class="header-item active">Inicio</li>
+        <li class="header-item">Farolas Solares</li>
+        <li class="header-item">Proyectos</li>
+        <li class="header-item">Empresa</li>
+        <li class="header-item">Actualidad</li>
+        <li class="header-item">Contacto</li>
+        <li class="flex header-item items-end mb-1">
+            <svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="5"/><path d="m17.571 17.5-5.571-5.5"/></g></svg>
+        </li>
+    </ul>
+</header>
+
+<style>
+
+    :root {
+        --line-width: 16px;
+    }
+
+    header {
+        top: 0;
+        position: sticky;
+        z-index: 2;
+    }
+
+    .header-item {
+        position: relative;
+        font-size: 1.1rem;
+        padding-bottom: 6px;
+
+        &&:hover {
+            cursor: pointer;
+        }
+    }
+
+    .header-item::after {
+        animation-name: showBorder;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+    }
+
+    .header-item.active::after,
+    .header-item:hover::after {
+        
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        content: '';
+        width: var(--line-width);
+        bottom: -5px;
+        left: 50%;
+        border-bottom: 2px solid #222;
+        transform: translateX(-50%);
+        
+    
+    }
+
+
+    @keyframes showBorder {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+</style>

@@ -1,0 +1,85 @@
+---
+
+const { title } = Astro.props
+const { descripcion } = Astro.props
+const { imgSrc } = Astro.props
+
+---
+
+
+<style>
+  .model-card > *:not(button) {
+    color: white;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+
+  .model-card > h2,
+  button {
+    text-transform: uppercase;
+  }
+
+  .model-card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .model-card > h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    width: 80%;
+    transition: color 0.2s ease;
+
+    &&:hover {
+      cursor: pointer;
+      color: gray;
+    }
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .flex-container > img {
+    margin-left: 20px;
+    width: 231px;
+    height: 183px;
+  }
+
+  button {
+    font-family: "Barlow Condensed", sans-serif;
+    transform: translateY(-50px);
+    width: 80px;
+    border: none;
+    padding: 6px;
+    background-color: white;
+    color: black;
+    transition: all 0.1s ease-in;
+
+    &&:hover {
+      cursor: pointer;
+      background-color: #222;
+      color: white;
+    }
+  }
+</style>
+
+<div class="model-card">
+  <h2 class="leading-10 mb-5">{title}</h2> 
+
+  <div class="flex-container">
+    <p
+        class="text-xl"
+    >
+      {descripcion}
+    </p>
+
+    <img
+      class="mr-16"
+      src={imgSrc}
+      alt={title}
+    />
+  </div>
+
+  <button>Más info</button>
+</div>

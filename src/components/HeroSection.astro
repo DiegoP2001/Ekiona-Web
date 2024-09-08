@@ -1,0 +1,52 @@
+---
+import HeroCard from "./Cards/HeroCard.astro";
+---
+
+<style>
+  .hero-container {
+    margin: 0px 128px 0px 128px;
+    padding: 100px 80px;
+    background-color: rgb(242, 196, 23);
+  }
+
+  .video-title {
+    position: relative;
+  }
+
+  .video-title::after {
+    position: absolute;
+    content: "";
+    width: 25%;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid #fff;
+  }
+</style>
+
+<section class="hero-container flex flex-col gap-5">
+  <div class="card-container flex flex-row">
+    <HeroCard
+      title="Centralita Inteligente Kenlok"
+      descripcion="Centralita electrónica de última generación desarrollada por nuestro departamento de I+D+i."
+      imgSrc="https://ekiona.com/contenido/media/2018/04/KENLOK.png"
+    />
+    <HeroCard
+      title="SISTEMA DE TELEGESTIÓN ILUMEK"
+      descripcion="Solución innovadora para el control y monitorización de las farolas solares."
+      imgSrc="https://ekiona.com/contenido/media/2018/06/Herramienta_de_telegestion_ILUMEK.png"
+    />
+  </div>
+  <h2 class="video-title text-center text-white text-xl mb-10">Video explicativo</h2>
+  <div class="video-container flex justify-center items-center">
+    <iframe
+      width="586"
+      height="330"
+      src="https://www.youtube.com/embed/m37oegpeMjo"
+      title="EKIONA Iluminación Solar - Soluciones Smart Cities"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+</section>

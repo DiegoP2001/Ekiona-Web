@@ -1,0 +1,56 @@
+---
+const languages = ["ES", "EN", "FR", "EU", "PO"]; // No FUNCIONA
+---
+
+<div class="dropdown mr-4 px-2 py-1">
+  <input id="dropdown-toggle" type="checkbox" aria-hidden="true" hidden />
+  <label
+    class="flex items-center dropdown-label"
+    for="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+    ES &nbsp <svg
+      height="18"
+      viewBox="0 0 21 21"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        d="m8.5.5-4 4-4-4"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        transform="translate(6 8)"></path></svg
+    >
+  </label>
+
+  <nav class="dropdown-content" aria-label="submenu">
+    { 
+      languages.map((lang) => {
+        <a href={`#${lang}`}>{lang}</a>
+      })
+    }
+  </nav>
+</div>
+
+<style>
+  .dropdown {
+    position: relative;
+    background-color: #2b2a29f2;
+  }
+
+  .dropdown-label {
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+  }
+
+  .dropdown-content > a {
+    color: black;
+  }
+
+  #dropdown-toggle:checked ~ .dropdown-content {
+    display: block;
+  }
+</style>

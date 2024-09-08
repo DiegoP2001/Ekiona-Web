@@ -1,0 +1,94 @@
+---
+
+---
+
+<style>
+  footer {
+    background-color: rgb(67, 64, 62);
+    color: white;
+  }
+
+  .footer-container {
+    margin: 0px 128px 0px 128px;
+    padding: 80px 20px;
+  }
+
+  .footer-container > ul {
+    display: flex;
+    flex-direction: column;
+    flex: 25%;
+    gap: 18px;
+  }
+
+  .footer-container > ul > li:first-child {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .footer-container > ul > li > a,  .copyright > ul > li > a{
+    transition: all 0.2s ease;
+  }
+
+  .footer-container > ul > li > a:hover {
+    cursor: pointer;
+    color: rgb(192, 190, 190);
+  }
+
+  .copyright > ul > li > a:hover {
+    cursor: pointer;
+    color: rgb(151, 150, 150);
+  }
+
+</style>
+
+<footer>
+  <div class="footer-container flex flex-row justify-between">
+    <ul>
+      <li>Ekiona</li>
+      <li>
+        Somos pioneros en ofrecer soluciones de iluminación solar adaptadas a
+        cada situación.
+      </li>
+      <li>
+        <img
+          src="https://ekiona.com/contenido/media/2018/11/Europe_flag_text-300x63.jpg"
+          alt="Logo UE"
+        />
+      </li>
+    </ul>
+    <ul class="ml-10">
+      <li>Contacto</li>
+      <li>(+34) <strong> 943 30 80 51 </strong></li>
+      <li>
+        <a href="mailto:info@ekiona.com"><strong> info@ekiona.com </strong></a>
+      </li>
+      <li>P.I. Abendaño</li>
+      <li>Sarobe, 6</li>
+      <li>20800 Zarautz (España)</li>
+    </ul>
+    <ul>
+      <li>Farolas Solares</li>
+      <li><a href="#">Serie Moon</a></li>
+      <li><a href="#">Serie Buried</a></li>
+      <li><a href="#">Serie Skyline</a></li>
+      <li><a href="#">Serie Crosswalk</a></li>
+      <li><a href="#">Serie Olintu</a></li>
+    </ul>
+    <ul>
+      <li>Últimas Noticias</li>
+      <li><a href="#">Smart City Expo World Congress 2023</a></li>
+      <li><a href="#">Día Internacional del Cambio Climático</a></li>
+    </ul>
+  </div>
+
+  <div
+    class="copyright w-full bg-white text-[#222] text-center flex justify-center py-4"
+  >
+    <p>&copy2010-2024 EKIONA</p>
+    <ul class="flex ml-2 gap-2">
+      <li><a href="#">Política de privacidad</a></li>
+      <li><a href="#">Aviso legal</a></li>
+    </ul>
+  </div>
+</footer>

@@ -1,0 +1,43 @@
+---
+import BenefitCard from "./Cards/BenefitCard.astro"
+---
+
+
+<style>
+    .solar-benefits {
+        margin: 5rem 140px 0px 140px;
+    }
+</style>
+
+
+<section class="solar-benefits mt-20">
+
+    <h2 class="text-center text-4xl mb-20">¿Por qué iluminar con energía solar?</h2>
+
+    <div class="cards-container flex gap-10">
+
+        <BenefitCard
+            svg="M600-120q-118 0-210-67T260-360H120v-80h122q-3-24-2.5-44.5T242-520H120v-80h140q38-106 130-173t210-67q69 0 130.5 24.5T840-748l-57 56q-37-32-83.5-50T600-760q-85 0-152 44.5T347-600h253v80H323q-4 27-3 47.5t3 32.5h277v80H347q34 71 101 115.5T600-200q53 0 99.5-18t83.5-50l57 56q-48 43-109.5 67.5T600-120Z"
+            title="Rentabilidad"
+            text="Ahorro en obra civil y canalización del cableado. Es la opción más rentable del mercado."
+        />
+        <BenefitCard
+            svg="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"
+            title="Recurso limpio"
+            text="La energía proveniente del sol es un recurso limpio, inagotable y respetuoso con el medio ambiente."
+        />
+        <BenefitCard
+            svg="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
+            title="Optimización"
+            text="La electricidad se produce en el mismo lugar donde se consume, evitando pérdidas energéticas."
+        />
+        <BenefitCard
+            svg="M216-176q-45-45-70.5-104T120-402q0-63 24-124.5T222-642q35-35 86.5-60t122-39.5Q501-756 591.5-759t202.5 7q8 106 5 195t-16.5 160.5q-13.5 71.5-38 125T684-182q-53 53-112.5 77.5T450-80q-65 0-127-25.5T216-176Zm112-16q29 17 59.5 24.5T450-160q46 0 91-18.5t86-59.5q18-18 36.5-50.5t32-85Q709-426 716-500.5t2-177.5q-49-2-110.5-1.5T485-670q-61 9-116 29t-90 55q-45 45-62 89t-17 85q0 59 22.5 103.5T262-246q42-80 111-153.5T534-520q-72 63-125.5 142.5T328-192Zm0 0Zm0 0Z"
+            title="Sin emisiones"
+            text="Evitamos la emisión a la atmósfera de CO2 y otros contaminantes, minimizando el efecto invernadero."
+        />
+        
+
+    </div>
+
+</section>

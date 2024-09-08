@@ -1,0 +1,79 @@
+---
+
+const { svg } = Astro.props
+const { title } = Astro.props
+const { link } = Astro.props
+const { viewBox } = Astro?.props
+
+---
+
+<style>
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    margin-bottom: 30px;
+
+    &&:hover {
+      cursor: pointer;
+      background-color: #222;
+    }
+  }
+
+  .circle:hover svg {
+    fill: white;
+  }
+
+  .card-title {
+    position: relative;
+  }
+
+  .card-title::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    bottom: -10px;
+    left: 50%;
+    border-bottom: 2px solid #222;
+    transform: translateX(-50%);
+  }
+
+  .card-link {
+    margin-top: 25px;
+    text-decoration: none;
+    color: rgb(91, 90, 90);
+  }
+</style>
+
+<div class="feature-card">
+  <div class="circle">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="64px"
+      viewBox={
+        viewBox != undefined 
+        ? viewBox
+        : "0 -960 960 960"
+      }
+      width="64px"
+      fill="#222"
+    >
+      <path d={svg}></path>
+    </svg>
+  </div>
+  <h2 class="card-title text-nowrap text-2xl">{title}</h2>
+
+  <a class="card-link" href={link}>VER</a>
+</div>
